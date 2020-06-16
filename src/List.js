@@ -1,10 +1,10 @@
 import React from 'react';
 import ListItems from './ListItems';
 
-const List = ({ items, key }) => (
-  <ul>
+const List = ({ items }) => (
+  <ul className="list">
     {items.map(item => (
-      <ListItems key={key} item={item} />
+      <ListItems item={item} key={item.key} />
     ))}
   </ul>
 );

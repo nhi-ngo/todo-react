@@ -22,9 +22,17 @@ class App extends Component {
     e.preventDefault();
 
     const newItem = this.state.currentItem;
+    // console.log(newItem)
 
     if (newItem.term !== '') {
-      this.setState(newItem)
+      const newItems = [...this.state.items, newItem];
+      this.setState({
+        items: newItems,
+        currentItem: {
+          term: '',
+          key: '',
+        },
+      });
     }
   };
 
@@ -40,7 +48,7 @@ class App extends Component {
           />
           <button type="submit">Add</button>
         </form>
-        <List items={this.state.items} key={this.state.currentItem.key} />
+        <List items={this.state.items} />
       </div>
     );
   }
