@@ -36,6 +36,14 @@ class App extends Component {
     }
   };
 
+  onIconClick = key => {
+    const filteredItems = this.state.items.filter(item => item.key !== key);
+
+    this.setState({
+      items: filteredItems,
+    });
+  };
+
   render() {
     return (
       <div className="App">
@@ -48,7 +56,7 @@ class App extends Component {
           />
           <button type="submit">Add</button>
         </form>
-        <List items={this.state.items} />
+        <List items={this.state.items} onIconClick={this.onIconClick} />
       </div>
     );
   }
@@ -61,7 +69,7 @@ export default App;
 // Pushes every term to our array of items after submit
 // The preventDefault() method stops the default action of an element from happening.
 
-// 1. add items to the list
+// 1. add items to the list ✅
 // 2. edit items
-// 3. delete items
+// 3. delete items ✅
 // 4. animate items when created and deleted

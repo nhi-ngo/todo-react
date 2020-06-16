@@ -1,10 +1,10 @@
 import React from 'react';
 import ListItems from './ListItems';
 
-const List = ({ items }) => (
+const List = ({ items, onIconClick }) => (
   <ul className="list">
     {items.map(item => (
-      <ListItems item={item} key={item.key} />
+      <ListItems onIconClick={onIconClick} item={item} key={item.key} />
     ))}
   </ul>
 );
