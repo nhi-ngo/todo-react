@@ -44,6 +44,20 @@ class App extends Component {
     });
   };
 
+  onInputUpdate = (term, key) => {
+    const { items } = this.state;
+
+    items.map(item => {
+      if (item.key === key) {
+        item.term = term;
+      }
+    });
+
+    this.setState({
+      items,
+    });
+  };
+
   render() {
     return (
       <div className="App">
@@ -56,7 +70,7 @@ class App extends Component {
           />
           <button type="submit">Add</button>
         </form>
-        <List items={this.state.items} onIconClick={this.onIconClick} />
+        <List items={this.state.items} onIconClick={this.onIconClick} onInputUpdate={this.onInputUpdate} />
       </div>
     );
   }
@@ -64,12 +78,6 @@ class App extends Component {
 
 export default App;
 
-// onSubmit is a function which does three things:
-// Cleans the input field after a submit action is triggered, by resetting term to the initial empty string value
-// Pushes every term to our array of items after submit
-// The preventDefault() method stops the default action of an element from happening.
-
 // 1. add items to the list ✅
-// 2. edit items
+// 2. edit items ✅
 // 3. delete items ✅
-// 4. animate items when created and deleted

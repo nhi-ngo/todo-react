@@ -48,6 +48,7 @@ body {
 
 .list {
   margin: 20px 10px;
+  padding-bottom: 20px;
 }
 
 .list-items {
@@ -65,7 +66,14 @@ body {
 .list-items li {
 	padding: 10px;
   list-style-type: none;
-  font-size: 19px;
+}
+
+.list-items input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 18px;
 }
 
 .fa-trash {
